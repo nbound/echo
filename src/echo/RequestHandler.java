@@ -34,7 +34,6 @@ public class RequestHandler extends Correspondent implements Runnable {
                 String msg = response(request);
                 System.out.println("sending: " + msg);
                 send(msg);
-                Thread.sleep(1000);
             } catch(Exception e) {
                 send(e.getMessage() + "request handler shutting down");
                 break;

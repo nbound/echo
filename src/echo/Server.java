@@ -60,7 +60,8 @@ public class Server {
     public static void main(String[] args) throws IOException {
         int port = 5555;
         //String service = "echo.RequestHandler";
-        String service = "casino.CasinoHandler";
+        //String service = "casino.CasinoHandler";
+        String service = "math.MathHandler";
         if (1 <= args.length) {
             service = args[0];
         }
