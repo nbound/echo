@@ -1,5 +1,6 @@
 package echo;
 
+import java.util.*;
 import java.net.Socket;
 
 public class RequestHandler extends Correspondent implements Runnable {
@@ -24,15 +25,18 @@ public class RequestHandler extends Correspondent implements Runnable {
     public void run() {
         while(active) {
             try {
-                // receive request
+                String request = receive();
+                System.out.println("received: " + request);
                 if(request.equals("quit")) {
                     shutDown();
                     break;
                 }
-                // send response
-                // sleep
+                String msg = response(request);
+                System.out.println("sending: " + msg);
+                send(msg);
+                Thread.sleep(1000);
             } catch(Exception e) {
-                send(e.getMessage() + "... ending session");
+                send(e.getMessage() + "request handler shutting down");
                 break;
             }
         }
