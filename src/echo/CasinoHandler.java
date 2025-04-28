@@ -1,9 +1,7 @@
-package casino;
+package echo;
 
 import java.net.*;
 import java.util.Random;
-
-import echo.*;
 
 public class CasinoHandler extends RequestHandler {
 

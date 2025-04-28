@@ -1,6 +1,4 @@
-package math;
-
-import echo.*;
+package echo;
 
 import java.net.Socket;
 import java.util.*;
