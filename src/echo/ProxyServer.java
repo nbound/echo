@@ -23,10 +23,12 @@ public class ProxyServer extends Server {
     }
 
     public static void main(String[] args) throws IOException {
-        int port = 5555;
-        int peerPort = 6666;
+        int port = 6666;        //this server
+        int peerPort = 5555;    //next server
         String peerHost = "localhost";
+        //String service = "echo.HitCountHandler";
         String service = "echo.SecurityHandler";
+        //String service = "echo.CacheHandler";
 
         if (1 <= args.length) {
             service = args[0];
