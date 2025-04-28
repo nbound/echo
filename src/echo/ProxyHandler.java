@@ -14,11 +14,15 @@ public class ProxyHandler extends RequestHandler {
         peer.requestConnection(peerHost, peerPort);
     }
 
+    protected void shutDown() {
+        peer.send("quit");
+        super.shutDown();
+    }
+
     protected String response(String msg) throws Exception {
         // forward msg to peer
         peer.send(msg);
         // return peer's response
-
         return peer.receive();
     }
 }

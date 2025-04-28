@@ -1,5 +1,4 @@
 package echo;
-import java.net.Socket;
 
 class HitCounter {
     private int hits = 0;

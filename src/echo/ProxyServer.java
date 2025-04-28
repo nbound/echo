@@ -26,7 +26,7 @@ public class ProxyServer extends Server {
         int port = 5555;
         int peerPort = 6666;
         String peerHost = "localhost";
-        String service = "echo.ProxyHandler";
+        String service = "echo.HitCountHandler";
 
         if (1 <= args.length) {
             service = args[0];
